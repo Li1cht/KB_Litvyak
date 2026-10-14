@@ -11,11 +11,11 @@ def fill_matrix_discryption(initial_str:str):
 
     return matrix
 
-def str_decryption(args):
-    matrix = fill_matrix_discryption(args)
+def str_decryption(initial_str):
+    matrix = fill_matrix_discryption(initial_str)
     decryption_str = ""
     for i in range(len(matrix[1])):
         for x in matrix:
             decryption_str += x[i]
 
-    print(decryption_str)
+    print(decryption_str.replace("*", ""))

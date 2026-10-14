@@ -1,4 +1,5 @@
-from utils import find_multiple
+from utils import find_multiple, is_prime
+
 
 
 def fill_matrix_encryption(initial_str:str, number_columns: int):
@@ -15,8 +16,17 @@ def fill_matrix_encryption(initial_str:str, number_columns: int):
 
 
 
-def str_encryption(args):
-    number_columns = find_multiple(args)
-    matrix = fill_matrix_encryption(args, number_columns)
+def str_encryption(initial_str:str):
+    number_columns = find_multiple(initial_str)
+    if is_prime(len(initial_str)):
+        initial_str += "*"
+        number_columns = find_multiple(initial_str)
+        matrix = fill_matrix_encryption(initial_str, number_columns)
+        print("".join(matrix))
+        return ...
 
+
+    matrix = fill_matrix_encryption(initial_str, number_columns)
     print("".join(matrix))
+    return ...
+
