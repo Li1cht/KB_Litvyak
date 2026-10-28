@@ -1,8 +1,9 @@
-from get_N_phi_E_D import get_p_q_N_E_D
-from de_encryption import encryption, decryption
+import json
 import os
 import time
-import json
+
+from de_encryption import decryption, encryption
+from get_N_phi_E_D import get_p_q_N_E_D
 
 
 def main():
@@ -44,20 +45,16 @@ def main():
             init_str = input("~>")
             encr_str = encryption(init_str, N, E)
             print("Encrypted:", encr_str)
-            print("Decrypted:", decryption(encr_str, N, D),"\n")
-            
+            print("Decrypted:", decryption(encr_str, N, D), "\n")
 
         elif command in ("exit", "quit", "-q"):
             print("end of session")
             break
 
         else:
-            print("Unknown command. Available: keys, -k, encr, -e, decr, -d, full, -f, exit")
-
-
-
-
-
+            print(
+                "Unknown command. Available: keys, -k, encr, -e, decr, -d, full, -f, exit"
+            )
 
 
 if __name__ == "__main__":

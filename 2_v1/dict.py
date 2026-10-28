@@ -76,7 +76,7 @@ alphabet = {
     "73": "ю",
     "74": "Я",
     "75": "я",
+    "76": " "
 }
-
 
 reverse_alphabet = {str(v): str(k) for k, v in alphabet.items()}
